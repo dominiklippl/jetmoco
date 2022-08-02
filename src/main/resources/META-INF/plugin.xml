@@ -1,18 +1,24 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.dominiklippl.jetmoco</id>
+    <id>de.dominiklippl.jetmoco</id>
     <name>jetmoco</name>
     <vendor>dominiklippl</vendor>
 
+    <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.dominiklippl.jetmoco.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.dominiklippl.jetmoco.services.MyProjectService"/>
-    </extensions>
+    <!-- Text to display as company information on Preferences/Settings | Plugin page -->
+    <vendor url="https://dominiklippl.de">Dominiklippl.de</vendor>
 
-    <applicationListeners>
-        <listener class="com.github.dominiklippl.jetmoco.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
+    <description>
+        <![CDATA[
+        Jetbrains plugin for the project administration software MOCO (www.mocoapp.com)
+    ]]>
+    </description>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Jetmoco" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                    factoryClass="de.dominiklippl.jetmoco.factories.MocoToolWindowFactory"/>
+    </extensions>
 </idea-plugin>

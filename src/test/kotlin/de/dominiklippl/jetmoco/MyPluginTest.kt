@@ -1,4 +1,4 @@
-package com.github.dominiklippl.jetmoco
+package de.dominiklippl.jetmoco
 
 import com.intellij.ide.highlighter.XmlFileType
 import com.intellij.psi.xml.XmlFile
